@@ -1,0 +1,25 @@
+.car-card {
+    padding: 4% 0;
+    max-width: 400px;
+
+    &_content {
+        margin: 10px;
+    }
+
+    &_img img {
+        width: 100%
+    }
+}
+
+.mat-card:not([class*=mat-elevation-z]) {
+    box-shadow: 0 2px 3px 1px #00000080;
+}
+
+.mat-card-actions {
+    margin: 0 1%;
+    text-align: right;
+}
+
+.mat-card>.mat-card-actions:last-child {
+    margin: 0 1%;
+}

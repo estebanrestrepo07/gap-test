@@ -1,0 +1,22 @@
+<mat-list class="car-details"
+          fxLayout="column"
+          fxLayoutAlign="start start">
+    <!-- <h3 mat-subheader>Car Details</h3> -->
+    <div fxFlex="100"
+         class="car-details_img"
+         *ngIf="!hideImg"
+         style.background-image="url({{carInfo.pictureUrl}})">
+        <!-- <img [src]="carInfo.pictureUrl"
+             [alt]="carInfo.make"> -->
+    </div>
+    <div fxFlex="100"
+         class="car-details_list">
+        <mat-list-item *ngFor="let carKey of carInfo | objectFor">
+            <div>
+                <p mat-line> {{carKey.key | capitalize}}: {{carKey.value}}</p>
+                <mat-divider></mat-divider>
+            </div>
+        </mat-list-item>
+    </div>
+
+</mat-list>

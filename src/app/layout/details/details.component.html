@@ -1,0 +1,26 @@
+<div class="details"
+     fxLayout="column">
+    <div fxFlex="100"
+         class="details_header">
+        <app-header [title]="title | uppercase"></app-header>
+    </div>
+    <div fxFlex="100"
+         fxLayout="row-reverse"
+         fxLayout.lt-md="column"
+         class=details_content>
+        <div fxFlex.gt-sm="60"
+             fxFlex.lt-md="80"
+             class="details_content_img">
+            <img *ngIf="carDetails.pictureUrl !== ''"
+                 [src]="carDetails.pictureUrl"
+                 [alt]="carDetails.make">
+        </div>
+        <div fxFlex.gt-sm="40"
+             fxFlex.lt-md="80">
+            <app-car-table-info [carInfo]="carDetails"
+                                [hideImg]="true"></app-car-table-info>
+        </div>
+
+    </div>
+
+</div>

@@ -1,0 +1,32 @@
+<div class="list"
+     fxLayout="column">
+    <div fxFlex="100"
+         class="list_header">
+        <app-header [title]="'List Cars'"></app-header>
+    </div>
+    <div fxFlex="100"
+         class="list_content">
+        <div fxLayoutAlign="end center"
+             class="list_content_search">
+            <mat-form-field fxFlex="30"
+                            fxFlex.lt-md="60"
+                            color="primary">
+                <input matInput
+                       (keyup)="applyFilter($event.target.value)"
+                       placeholder="Filter by make">
+            </mat-form-field>
+        </div>
+        <div class="list_content_list"
+             fxLayout="row wrap"
+             fxLayoutAlign="center center">
+
+            <app-car-card class="list_content_list_card"
+                          fxFlex.xs="100"
+                          fxFlex.sm="50"
+                          fxFlex.lt-lg="25"
+                          fxFlex.gt-md="25"
+                          *ngFor="let car of carsList"
+                          [carInfo]="car"></app-car-card>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,59 @@
+<div class="compare">
+    <div class="compare_header">
+        <app-header [title]="'Compare Cars'"></app-header>
+    </div>
+    <div class="compare_content"
+         fxLayout="column">
+        <div class="compare_content_selectors"
+             fxFlex="100"
+             fxLayout="row"
+             fxLayout.lt-sm="column"
+             fxLayoutAlign="center center">
+            <form fxFlex="85"
+                  fxLayout="row"
+                  class=""
+                  fxLayoutAlign="center center"
+                  [formGroup]="comparatorForm">
+                <mat-form-field fxFlex="40"
+                                fxFlex.lt-sm="50"
+                                fxFlexOffset.gt-xs="5">
+                    <mat-select placeholder="Car #1 to compare"
+                                formControlName="carSelected1">
+                        <mat-option *ngFor="let carName of carsNameList"
+                                    [value]="carName.carId">{{carName.make | capitalize}} - {{carName.model | capitalize}}</mat-option>
+                    </mat-select>
+                    <mat-error>this field is required</mat-error>
+                </mat-form-field>
+
+                <mat-form-field fxFlex="40"
+                                fxFlex.lt-sm="50"
+                                fxFlexOffset="5"
+                                fxFlexOffset.gt-xs="5">
+                    <mat-select placeholder="Car #2 to compare"
+                                formControlName="carSelected2">
+                        <mat-option *ngFor="let carName of carsNameList"
+                                    [value]="carName.carId">{{carName.make | capitalize}} - {{carName.model |capitalize}}</mat-option>
+                    </mat-select>
+                    <mat-error *ngIf="!sameValues()">this field is required</mat-error>
+                    <mat-error *ngIf="sameValues()">Cannot compare same cars</mat-error>
+                </mat-form-field>
+            </form>
+            <div fxFlex.lt-sm="100"
+                 fxFlex.gt-xs="15"
+                 fxLayoutAlign="end center">
+                <button mat-raised-button
+                        [disabled]="!comparatorForm.valid"
+                        (click)="onCompare()"
+                        color="primary">Compare</button>
+            </div>
+        </div>
+        <div class="compare_content_tables"
+             fxLayout="row"
+             fxLayoutAlign="center start">
+            <app-car-table-info class="compare_content_tables_compare"
+                                fxFlex="50"
+                                *ngFor="let carInfo of carsToCompareTable"
+                                [carInfo]="carInfo"></app-car-table-info>
+        </div>
+    </div>
+</div>

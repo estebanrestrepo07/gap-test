@@ -1,0 +1,15 @@
+.details {
+    &_header {
+        padding: 0 3%;
+    }
+
+    &_content {
+        padding: 0 3%;
+
+        &_img img {
+            width: 100%;
+            height: auto;
+            max-height: 75vh;
+        }
+    }
+}
