@@ -48,10 +48,12 @@
             </div>
         </div>
         <div class="compare_content_tables"
-             fxLayout="row"
-             fxLayoutAlign="center start">
+             fxLayout.gt-xs="row"
+             fxLayout.lt-sm="column"
+             fxLayoutAlign.gt-xs="center start">
             <app-car-table-info class="compare_content_tables_compare"
                                 fxFlex="50"
+                                fxFlex.xs="100"
                                 *ngFor="let carInfo of carsToCompareTable"
                                 [carInfo]="carInfo"></app-car-table-info>
         </div>
