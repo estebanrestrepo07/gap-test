@@ -11,28 +11,39 @@
         box-shadow: 0 0 5px 2px #a5a6a88c;
         line-height: 1.4;
 
-        @media screen and (max-width: 599px) {
+        // @media screen and (max-width: 599px) {
+        //     min-height: 40vh;
+        // }
+        @media screen and (max-width: 959px) {
+            min-height: 25vh;
+        }
+
+        @media screen and (min-width: 600px) and (max-width:959px) and (orientation: portrait) {
             min-height: 40vh;
         }
 
-        @media screen and (min-width: 600px) and (max-width:959px) {
-            min-height: 30vh;
+        @media screen and (min-width: 600px) and (max-width:959px) and (orientation: landscape) {
+            min-height: 70vh;
         }
 
         @media screen and (min-width:960px) {
-            min-height: 45vh;
+            min-height: 42vh;
         }
 
         @media screen and (min-width:1120px) {
-            min-height: 52vh;
+            min-height: 50vh;
         }
 
         @media screen and (min-width:1280px) {
-            min-height: 60vh;
+            min-height: 57vh;
         }
     }
 
     &_list {
         width: 100%
     }
+}
+
+.mat-list .mat-list-item {
+    height: 49px;
 }

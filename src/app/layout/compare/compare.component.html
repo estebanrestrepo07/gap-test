@@ -11,12 +11,12 @@
              fxLayoutAlign="center center">
             <form fxFlex="85"
                   fxLayout="row"
-                  class=""
-                  fxLayoutAlign="center center"
+                  fxLayout.xs="column"
+                  class="compare_content_selectors_form"
+                  fxLayoutAlign.gt-xs="center center"
                   [formGroup]="comparatorForm">
                 <mat-form-field fxFlex="40"
-                                fxFlex.lt-sm="50"
-                                fxFlexOffset.gt-xs="5">
+                                fxFlex.lt-sm="50">
                     <mat-select placeholder="Car #1 to compare"
                                 formControlName="carSelected1">
                         <mat-option *ngFor="let carName of carsNameList"
@@ -26,9 +26,7 @@
                 </mat-form-field>
 
                 <mat-form-field fxFlex="40"
-                                fxFlex.lt-sm="50"
-                                fxFlexOffset="5"
-                                fxFlexOffset.gt-xs="5">
+                                fxFlex.lt-sm="50">
                     <mat-select placeholder="Car #2 to compare"
                                 formControlName="carSelected2">
                         <mat-option *ngFor="let carName of carsNameList"
@@ -48,12 +46,12 @@
             </div>
         </div>
         <div class="compare_content_tables"
-             fxLayout.gt-xs="row"
-             fxLayout.lt-sm="column"
-             fxLayoutAlign.gt-xs="center start">
+             fxLayout.gt-sm="row"
+             fxLayout.lt-md="column"
+             fxLayoutAlign.lt-md="center center"
+             fxLayoutAlign.gt-sm="center start">
             <app-car-table-info class="compare_content_tables_compare"
-                                fxFlex="50"
-                                fxFlex.xs="100"
+                                fxFlex="80"
                                 *ngFor="let carInfo of carsToCompareTable"
                                 [carInfo]="carInfo"></app-car-table-info>
         </div>

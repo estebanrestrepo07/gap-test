@@ -13,7 +13,7 @@
          class="car-details_list">
         <mat-list-item *ngFor="let carKey of carInfo | objectFor">
             <div>
-                <p mat-line> {{carKey.key | capitalize}}: {{carKey.value}}</p>
+                <p mat-line> <span style="font-weight: bold">{{carKey.key | capitalize}}:</span> {{carKey.value | capitalize}}</p>
                 <mat-divider></mat-divider>
             </div>
         </mat-list-item>

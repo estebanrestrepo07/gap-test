@@ -1,4 +1,6 @@
 .list {
+    margin-bottom: 3%;
+
     &_header {
         padding: 0 3%
     }
@@ -9,10 +11,16 @@
 
         &_list {
             &_card {
-
+                max-width: 325px;
                 min-width: 325px;
                 padding: 0 1%;
                 margin: 1% 0;
+            }
+
+            &_card:hover {
+                padding: 0 4px;
+                margin: 2px 0;
+                border: 0
             }
         }
     }

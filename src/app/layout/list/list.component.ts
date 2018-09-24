@@ -11,18 +11,21 @@ const ELEMENT_DATA = [];
 export class ListComponent implements OnInit {
 	constructor(private _carService: CarService) {}
 	carsDefault: ICar[];
-	carsList: ICar[];
+	carsList: ICar[] = [];
+	carsEmpty = '';
 	ngOnInit() {
 		this._carService.getCarsList().subscribe((response: ICar[]) => {
 			this.sortProperties(response);
 			this.carsDefault = response;
 			this.carsList = response;
+			this.carsEmpty = 'No Cars to display';
 		});
 	}
 
 	applyFilter(filterValue: string) {
 		if (filterValue !== '') {
 			const newCarsList = this.carsDefault.filter((car) => car.make.toLowerCase() === filterValue.toLowerCase());
+			this.carsEmpty = newCarsList.length === 0 ? 'Cannot display make filtered' : '"No Cars to display';
 			this.carsList = newCarsList;
 		} else {
 			this.carsList = this.carsDefault;

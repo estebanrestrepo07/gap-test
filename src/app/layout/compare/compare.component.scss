@@ -1,4 +1,6 @@
 .compare {
+    margin-bottom: 3%;
+
     &_header {
         padding: 0 3%
     }
@@ -7,21 +9,49 @@
         margin: 1% 0;
         padding: 0 3%;
 
+        &_selectors {
+            margin-top: 1%;
+
+            &_form {
+                margin: 0%;
+
+                ::ng-deep .mat-form-field {
+                    margin: 0 !important;
+                    padding: 0 3%;
+                }
+
+                @media screen and (max-width: 599px) {
+                    margin-bottom: 2%;
+                    width: 60%;
+                }
+            }
+        }
+
         &_tables {
+            justify-content: center;
+
             &_compare:first-child {
                 padding-right: 2.5%;
 
-                @media screen and (min-width: 600px) {
+                @media screen and (max-width: 959px) {
                     padding: 1%;
                 }
             }
 
             &_compare:last-child {
                 padding-left: 2.5%;
+                border-left: 1px solid #666666d0;
 
-                @media screen and (min-width: 600px) {
+                @media screen and (max-width: 959px) {
                     padding: 1%;
-                    border-left: 1px solid #666666d0;
+                    border-left: 0px;
+                }
+            }
+
+            &_compare {
+                @media screen and (max-width: 959px) {
+                    margin-top: 2%;
+                    width: 80%
                 }
             }
         }

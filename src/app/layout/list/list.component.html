@@ -18,15 +18,17 @@
         </div>
         <div class="list_content_list"
              fxLayout="row wrap"
-             fxLayoutAlign="center center">
-
+             fxLayoutAlign="center center"
+             *ngIf="carsList.length > 0">
             <app-car-card class="list_content_list_card"
-                          fxFlex.xs="100"
-                          fxFlex.sm="50"
-                          fxFlex.lt-lg="25"
-                          fxFlex.gt-md="25"
+                          fxFlex="25"
                           *ngFor="let car of carsList"
                           [carInfo]="car"></app-car-card>
         </div>
+        <div class="list_content_list"
+             fxLayout="row wrap"
+             fxLayoutAlign="center center"
+             *ngIf="carsList.length === 0">
+            <h3>{{carsEmpty}}</h3>
+        </div>
     </div>
-</div>

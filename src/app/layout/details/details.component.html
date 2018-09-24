@@ -16,9 +16,16 @@
                  [alt]="carDetails.make">
         </div>
         <div fxFlex.gt-sm="40"
-             fxFlex.lt-md="80">
-            <app-car-table-info [carInfo]="carDetails"
-                                [hideImg]="true"></app-car-table-info>
+             fxFlex.lt-md="80"
+             class="details_content_info">
+            <div class="details_content_info_description">
+                {{carDetails.description | capitalize}}
+            </div>
+            <div class="details_content_info_list">
+                <app-car-table-info [carInfo]="carDetails"
+                                    [hideImg]="true"></app-car-table-info>
+            </div>
+
         </div>
 
     </div>
